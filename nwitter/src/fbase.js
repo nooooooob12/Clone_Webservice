@@ -1,5 +1,6 @@
-import * as firebase from "firebase/app"
-
+import firebase from "firebase/compat/app";
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 const firebaseConfig = {
     apiKey: "AIzaSyBtoBVGvNdY_OcnuPGII9xc2AiZEUsdAOk",
     authDomain: "nwitter-f0cad.firebaseapp.com",
@@ -10,4 +11,6 @@ const firebaseConfig = {
     measurementId: "G-846MLMB6HR"
   };
 
-export default  firebase.initializeApp(firebaseConfig)
+  export default firebase.initializeApp(firebaseConfig);
+
+  export const authService = firebase.auth();
