@@ -1,10 +1,8 @@
-import app, { authService, firebaseInstance } from "fbase";
+import { authService, firebaseInstance } from "fbase";
 import React, { useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  GithubAuthProvider,
-  GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
 
@@ -33,14 +31,11 @@ const Auth = ({}) => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-
-          // ...
         })
         .catch((error) => {
           const errorMessage = error.message;
           setError(errorMessage);
           setError(errorMessage);
-          // ..
         });
     } else {
       signInWithEmailAndPassword(authService, email, password)
@@ -48,7 +43,6 @@ const Auth = ({}) => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          // ...
         })
         .catch((error) => {
           const errorCode = error.code;
